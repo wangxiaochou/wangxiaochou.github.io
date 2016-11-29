@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2016-11-28T13:32:09.355Z</updated>
+  <updated>2016-11-29T03:44:11.077Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -14,6 +14,33 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>How To Start a Blog With Hexo</title>
+    <link href="http://yoursite.com/2016/11/29/How-To-Start-a-Blog-With-Hexo/"/>
+    <id>http://yoursite.com/2016/11/29/How-To-Start-a-Blog-With-Hexo/</id>
+    <published>2016-11-29T03:15:19.000Z</published>
+    <updated>2016-11-29T03:44:11.077Z</updated>
+    
+    <content type="html"><![CDATA[<p>我试一下是不是这样写的，只有一句一句的自己写了。<br><a href="https://wangxiaochou.github.io/" target="_blank" rel="external">这是链接</a></p>
+<p><strong>再来一张图片</strong><br><img src="http://img.blog.csdn.net/20161129113810368" alt="这是图片"></p>
+<p><em>再来一段代码</em></p>
+<p>`# Directory<br>source_dir: source<br>public_dir: public<br>tag_dir: tags<br>archive_dir: archives<br>category_dir: categories<br>code_dir: downloads/code<br>i18n_dir: :lang<br>skip_render:</p>
+<h1 id="Writing"><a href="#Writing" class="headerlink" title="Writing"></a>Writing</h1><p>new_post_name: :title.md # File name of new posts<br>default_layout: post<br>titlecase: false # Transform title into titlecase<br>external_link: true # Open external links in new tab<br>filename_case: 0<br>render_drafts: false<br>post_asset_folder: false<br>relative_link: false<br>future: true<br>highlight:<br>  enable: true<br>  line_number: true<br>  auto_detect: false<br>  tab_replace:`</p>
+<p>  好了，我试一试</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;我试一下是不是这样写的，只有一句一句的自己写了。&lt;br&gt;&lt;a href=&quot;https://wangxiaochou.github.io/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;这是链接&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;再来一张图片&lt;/stro
+    
+    </summary>
+    
+    
+      <category term="Test blog" scheme="http://yoursite.com/tags/Test-blog/"/>
+    
+  </entry>
   
   <entry>
     <title>Hello World</title>
