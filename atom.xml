@@ -46,35 +46,4 @@
     
   </entry>
   
-  <entry>
-    <title>[object Object]</title>
-    <link href="http://yoursite.com/2016/12/01/%E6%B5%8B%E8%AF%95%E6%96%87%E6%A1%A3/"/>
-    <id>http://yoursite.com/2016/12/01/测试文档/</id>
-    <published>2016-12-01T10:19:53.939Z</published>
-    <updated>2016-12-01T10:19:53.939Z</updated>
-    
-    <content type="html"><![CDATA[<p>今天来讨论一下递归的问题，只是初步，后面陆续还会有更加深入的探讨<br>先来一个数学函数：</p>
-<blockquote>
-<p>$$f(x)=2f(x-1)+x^2$$<br>$$f(0)=0$$</p>
-</blockquote>
-<p>由这个函数我们可以推出这样的结果</p>
-<blockquote>
-<p>$$f(1)=1,f(2)=6,f(3)=21,f(4)=58$$</p>
-</blockquote>
-<p><strong>结论</strong>：当一个函数用它自己来定义的时候就称为是，<strong>递归的</strong>，注意这里我<strong>并没有</strong>说递归的概念，只是说这个数学函数是<strong>递归的</strong>。<br>好了，上代码</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line">import java.util.Scanner;</div><div class="line">public class Study_2016112100701 &#123;</div><div class="line">	public static void main(String arsg[])&#123;</div><div class="line">	</div><div class="line">		//输入</div><div class="line">		int n;</div><div class="line">		System.out.println(&quot;请输入一个数: &quot;);</div><div class="line">		@SuppressWarnings(&quot;resource&quot;)</div><div class="line">		Scanner sc=new Scanner(System.in);</div><div class="line">		n=sc.nextInt();</div><div class="line">		</div><div class="line">		//求和</div><div class="line">		int sum=0;                    //此时我们 声明并创建了一个初始的值，是sum自己为0</div><div class="line">		for(int i=0;i&lt;n;i++)</div><div class="line">			sum+=i;                   //所有的计算都必须围绕上一个sum才可以求出下一个sum</div><div class="line">		System.out.println(sum);               </div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;今天来讨论一下递归的问题，只是初步，后面陆续还会有更加深入的探讨&lt;br&gt;先来一个数学函数：&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;$$f(x)=2f(x-1)+x^2$$&lt;br&gt;$$f(0)=0$$&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;由这个函数我们可以推出这样的结
-    
-    </summary>
-    
-    
-  </entry>
-  
 </feed>
