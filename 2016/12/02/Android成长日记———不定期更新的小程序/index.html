@@ -4,7 +4,7 @@
     <!-- hexo-inject:begin --><!-- hexo-inject:end --><!-- Title -->
     
     <title>
-        Android成长日记————Java当中的递归问题 | Mr Joker
+        Android成长日记———不定期更新的小程序 | Mr Joker
     </title>
     
     <!-- Favicons -->
@@ -40,7 +40,7 @@
     <!-- The Open Graph protocol -->
     <meta property="og:url" content="http://yoursite.com">
     <meta property="og:type" content="blog">
-    <meta property="og:title" content="Android成长日记————Java当中的递归问题 | Mr Joker">
+    <meta property="og:title" content="Android成长日记———不定期更新的小程序 | Mr Joker">
     <meta property="og:description" content="null">
     
      <!--[if lte IE 9]>
@@ -248,7 +248,7 @@
 		
 	
         <p class="article-headline-p">
-            Android成长日记————Java当中的递归问题
+            Android成长日记———不定期更新的小程序
         </p>
     </div>
 
@@ -266,7 +266,7 @@
     <!-- Author Name & Date -->
     <div>
         <strong>WangXiaoChou</strong>
-        <span>12月 01, 2016</span>
+        <span>12月 02, 2016</span>
     </div>
     
     <div class="section-spacer"></div>
@@ -301,21 +301,21 @@
     
     
     <!-- Share Twitter -->
-    <a class="post_share-link" href="https://twitter.com/intent/tweet?text=Android成长日记————Java当中的递归问题&url=http://yoursite.com//2016/12/01/Android成长日记————Java当中的递归问题/index.html&via=WangXiaoChou" target="_blank">
+    <a class="post_share-link" href="https://twitter.com/intent/tweet?text=Android成长日记———不定期更新的小程序&url=http://yoursite.com//2016/12/02/Android成长日记———不定期更新的小程序/index.html&via=WangXiaoChou" target="_blank">
         <li class="mdl-menu__item">
             分享到 Twitter
         </li>
     </a>
     
     <!-- Share Google+ -->
-    <a class="post_share-link" href="https://plus.google.com/share?url=http://yoursite.com//2016/12/01/Android成长日记————Java当中的递归问题/index.html" target="_blank">
+    <a class="post_share-link" href="https://plus.google.com/share?url=http://yoursite.com//2016/12/02/Android成长日记———不定期更新的小程序/index.html" target="_blank">
         <li class="mdl-menu__item">
             分享到 Google+
         </li>
     </a>
     
     <!-- Share Weibo -->
-    <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=Android成长日记————Java当中的递归问题&url=http://yoursite.com//2016/12/01/Android成长日记————Java当中的递归问题/index.html&pic=&searchPic=false&style=simple" target="_blank">
+    <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=Android成长日记———不定期更新的小程序&url=http://yoursite.com//2016/12/02/Android成长日记———不定期更新的小程序/index.html&pic=&searchPic=false&style=simple" target="_blank">
         <li class="mdl-menu__item">
             分享到微博
         </li>
@@ -327,16 +327,30 @@
                 <!-- Post Content -->
                 <div id="post-content" class="markdown-Github mdl-color-text--grey-700 mdl-card__supporting-text fade out">
 	
-		<p>今天来讨论一下递归的问题，只是初步，后面陆续还会有更加深入的探讨<br>先来一个数学函数：</p>
-<blockquote>
-<p>$$f(x)=2f(x-1)+x^2$$<br>$$f(0)=0$$</p>
-</blockquote>
-<p>由这个函数我们可以推出这样的结果</p>
-<blockquote>
-<p>$$f(1)=1,f(2)=6,f(3)=21,f(4)=58$$</p>
-</blockquote>
-<p><strong>结论</strong>：当一个函数用它自己来定义的时候就称为是，<strong>递归的</strong>，注意这里我<strong>并没有</strong>说递归的概念，只是说这个数学函数是<strong>递归的</strong>。<br>好了，上代码</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line">import java.util.Scanner;</div><div class="line">public class Study_2016112100701 &#123;</div><div class="line">	public static void main(String arsg[])&#123;</div><div class="line">	</div><div class="line">		//输入</div><div class="line">		int n;</div><div class="line">		System.out.println(&quot;请输入一个数: &quot;);</div><div class="line">		@SuppressWarnings(&quot;resource&quot;)</div><div class="line">		Scanner sc=new Scanner(System.in);</div><div class="line">		n=sc.nextInt();</div><div class="line">		</div><div class="line">		//求和</div><div class="line">		int sum=0;                    //此时我们 声明并创建了一个初始的值，是sum自己为0</div><div class="line">		for(int i=0;i&lt;n;i++)</div><div class="line">			sum+=i;                   //所有的计算都必须围绕上一个sum才可以求出下一个sum</div><div class="line">		System.out.println(sum);               </div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+		<p>更新时间又太晚了，拖的时间太长了。下次注意，争取每天一更。<br>今天的主题是算法，以后一个月的时间都是关于算法的了。</p>
+<p>问题1：<strong>求两个从键盘输入的数的最大公约数和最小公倍数</strong></p>
+<p> <strong>顺序理解</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">（1）先求最大公约数</div><div class="line">（2）再求最小公倍数</div></pre></td></tr></table></figure>
+<p><strong>最大公约数</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line">辗转相除法是求两个自然数的最大公约数的一种方法，也叫欧几里德算法</div><div class="line">代码：</div><div class="line">    while(max%min!=0)&#123;      //一个while循环</div><div class="line">    int temp=max%min;       //先拿最大数除以最小数</div><div class="line">    max=min;                //得到余数以后，一直拿被除数和余数相除</div><div class="line">    min=temp;</div><div class="line">&#125;</div><div class="line">return min;                 //知道余数为0</div><div class="line"></div><div class="line">例：gcd(39,23)</div><div class="line">   39/23=1(余16)</div><div class="line">   23/16=1（余7）</div><div class="line">   16/7=2（余2）</div><div class="line">   7/2=3（余1）</div><div class="line">   2/1=2（余0）   //到这里就停止了</div></pre></td></tr></table></figure>
+<p><strong>最小公倍数</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">得到最大公约数之后，求最小公倍数很简单</div><div class="line"></div><div class="line">lcm=(a/gcd)*(b/gcd)*gcd</div><div class="line"></div><div class="line">拿其中一个数除以最大公约数，再乘以另一个数</div></pre></td></tr></table></figure>
+<p>代码<br>新建一个最大公约数类</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">class CalcGCD&#123;</div><div class="line">		public static int calcGCG(int a,int b)&#123;</div><div class="line">			//使用辗转相除法计算最大公约数</div><div class="line">			int max=0;</div><div class="line">			int min=0;</div><div class="line">			if(a&gt;b)&#123;</div><div class="line">				max=a;</div><div class="line">				min=b;</div><div class="line">			&#125;else&#123;</div><div class="line">				max=b;</div><div class="line">				min=a;</div><div class="line">			&#125;</div><div class="line">			while(max%min!=0)&#123;</div><div class="line">				int temp=max%min;</div><div class="line">				max=min;</div><div class="line">				min=temp;</div><div class="line">			&#125;</div><div class="line">			return min;</div><div class="line">		&#125;</div><div class="line">	&#125;</div></pre></td></tr></table></figure>
+<p>再新建一个最小公倍数的类</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">class CalcLCM&#123;</div><div class="line">	public static int calcLCM(int a,int b)&#123;</div><div class="line">		int gcd=CalcGCD.calcGCG(a,b);</div><div class="line">		int lcm=(a/gcd)*(b/gcd)*gcd;</div><div class="line">		return lcm;</div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>主函数和主类</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"></div><div class="line">import java.util.Scanner;</div><div class="line">	</div><div class="line">	public class Study_20161202002&#123;</div><div class="line">		public static void main(String[] args)&#123;</div><div class="line">			System.out.println(&quot;请输入第一个整数: &quot;);</div><div class="line">		    Scanner sc=new Scanner(System.in);</div><div class="line">		    int a=sc.nextInt();</div><div class="line">			System.out.println(&quot;请输入第二个整数: &quot;);</div><div class="line">			int b=sc.nextInt();</div><div class="line">			System.out.println(a+&quot;和&quot;+b+&quot;的最大公约数为: &quot;);</div><div class="line">			System.out.println(CalcGCD.calcGCG(a, b));</div><div class="line">			System.out.println(a+&quot;和&quot;+b+&quot;的最小公倍数为: &quot;);</div><div class="line">			System.out.println(CalcLCM.calcLCM(a, b));</div><div class="line">		&#125;</div><div class="line">	&#125;</div></pre></td></tr></table></figure>
+<p>问题2：<strong>关于多重if语句的判断</strong></p>
+<p>原理图<br><img src="http://img.blog.csdn.net/20161202170243764" alt="这里写图片描述"></p>
+<p><strong>语法</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">if(条件1)&#123;</div><div class="line">	if(条件2)&#123;</div><div class="line">		代码块1;</div><div class="line">	&#125;else&#123;</div><div class="line">		代码块2;</div><div class="line">	&#125;</div><div class="line">&#125;else&#123;</div><div class="line">	代码块3;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p><strong>逻辑理解</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">如果外层if成立，则继续经过内层if</div><div class="line">如果内层if成立，经过继续往下层if</div><div class="line">一直成立，则顺序往下</div><div class="line">且不管else</div><div class="line"></div><div class="line">如果外层if不成立，则下面所有if不成立</div><div class="line">直接到第一个else</div></pre></td></tr></table></figure>
+<p><strong>代码</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div></pre></td><td class="code"><pre><div class="line">public class Study_20161202004 &#123;</div><div class="line">	public static void main(String[] args)&#123;</div><div class="line">		int num;</div><div class="line">		Scanner sc=new Scanner(System.in);</div><div class="line">		System.out.println(&quot;请输入一个数: &quot;);</div><div class="line">		num=sc.nextInt();</div><div class="line">		</div><div class="line">		if(num%3==0)&#123;</div><div class="line">			System.out.println(&quot;number id divisible by 3&quot;);</div><div class="line">			if(num%2==0)&#123;</div><div class="line">				System.out.println(&quot;number is divisible by 2&quot;);</div><div class="line">			&#125;</div><div class="line">		&#125;</div><div class="line">		else&#123;</div><div class="line">			if(num%5==0)&#123;</div><div class="line">				System.out.println(&quot;number is divisible by 5&quot;);</div><div class="line">			&#125;</div><div class="line">		&#125;</div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>输出结果</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">请输入一个数: </div><div class="line">60</div><div class="line">number id divisible by 3</div><div class="line">number is divisible by 2</div></pre></td></tr></table></figure>
 	
 	
 	
@@ -356,19 +370,19 @@
     
     <!-- Prev Nav -->
     
-        <a href="/2016/12/02/Android成长日记———不定期更新的小程序/" id="post_nav-newer" class="prev-content">
-            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
-                <i class="material-icons">arrow_back</i>
-            </button>
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            新篇
-        </a>
-    
 
     <!-- Section Spacer -->
     <div class="section-spacer"></div>
 
     <!-- Next Nav -->
+    
+        <a href="/2016/12/01/Android成长日记————Java当中的递归问题/" id="post_nav-older" class="next-content">
+            旧篇
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
+                <i class="material-icons">arrow_forward</i>
+            </button>
+        </a>
     
 </nav>
         </div>

@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2016-12-01T10:23:52.807Z</updated>
+  <updated>2016-12-02T09:15:51.729Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -14,6 +14,49 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Android成长日记———不定期更新的小程序</title>
+    <link href="http://yoursite.com/2016/12/02/Android%E6%88%90%E9%95%BF%E6%97%A5%E8%AE%B0%E2%80%94%E2%80%94%E2%80%94%E4%B8%8D%E5%AE%9A%E6%9C%9F%E6%9B%B4%E6%96%B0%E7%9A%84%E5%B0%8F%E7%A8%8B%E5%BA%8F/"/>
+    <id>http://yoursite.com/2016/12/02/Android成长日记———不定期更新的小程序/</id>
+    <published>2016-12-02T09:15:02.000Z</published>
+    <updated>2016-12-02T09:15:51.729Z</updated>
+    
+    <content type="html"><![CDATA[<p>更新时间又太晚了，拖的时间太长了。下次注意，争取每天一更。<br>今天的主题是算法，以后一个月的时间都是关于算法的了。</p>
+<p>问题1：<strong>求两个从键盘输入的数的最大公约数和最小公倍数</strong></p>
+<p> <strong>顺序理解</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">（1）先求最大公约数</div><div class="line">（2）再求最小公倍数</div></pre></td></tr></table></figure>
+<p><strong>最大公约数</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line">辗转相除法是求两个自然数的最大公约数的一种方法，也叫欧几里德算法</div><div class="line">代码：</div><div class="line">    while(max%min!=0)&#123;      //一个while循环</div><div class="line">    int temp=max%min;       //先拿最大数除以最小数</div><div class="line">    max=min;                //得到余数以后，一直拿被除数和余数相除</div><div class="line">    min=temp;</div><div class="line">&#125;</div><div class="line">return min;                 //知道余数为0</div><div class="line"></div><div class="line">例：gcd(39,23)</div><div class="line">   39/23=1(余16)</div><div class="line">   23/16=1（余7）</div><div class="line">   16/7=2（余2）</div><div class="line">   7/2=3（余1）</div><div class="line">   2/1=2（余0）   //到这里就停止了</div></pre></td></tr></table></figure>
+<p><strong>最小公倍数</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">得到最大公约数之后，求最小公倍数很简单</div><div class="line"></div><div class="line">lcm=(a/gcd)*(b/gcd)*gcd</div><div class="line"></div><div class="line">拿其中一个数除以最大公约数，再乘以另一个数</div></pre></td></tr></table></figure>
+<p>代码<br>新建一个最大公约数类</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">class CalcGCD&#123;</div><div class="line">		public static int calcGCG(int a,int b)&#123;</div><div class="line">			//使用辗转相除法计算最大公约数</div><div class="line">			int max=0;</div><div class="line">			int min=0;</div><div class="line">			if(a&gt;b)&#123;</div><div class="line">				max=a;</div><div class="line">				min=b;</div><div class="line">			&#125;else&#123;</div><div class="line">				max=b;</div><div class="line">				min=a;</div><div class="line">			&#125;</div><div class="line">			while(max%min!=0)&#123;</div><div class="line">				int temp=max%min;</div><div class="line">				max=min;</div><div class="line">				min=temp;</div><div class="line">			&#125;</div><div class="line">			return min;</div><div class="line">		&#125;</div><div class="line">	&#125;</div></pre></td></tr></table></figure>
+<p>再新建一个最小公倍数的类</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">class CalcLCM&#123;</div><div class="line">	public static int calcLCM(int a,int b)&#123;</div><div class="line">		int gcd=CalcGCD.calcGCG(a,b);</div><div class="line">		int lcm=(a/gcd)*(b/gcd)*gcd;</div><div class="line">		return lcm;</div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>主函数和主类</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"></div><div class="line">import java.util.Scanner;</div><div class="line">	</div><div class="line">	public class Study_20161202002&#123;</div><div class="line">		public static void main(String[] args)&#123;</div><div class="line">			System.out.println(&quot;请输入第一个整数: &quot;);</div><div class="line">		    Scanner sc=new Scanner(System.in);</div><div class="line">		    int a=sc.nextInt();</div><div class="line">			System.out.println(&quot;请输入第二个整数: &quot;);</div><div class="line">			int b=sc.nextInt();</div><div class="line">			System.out.println(a+&quot;和&quot;+b+&quot;的最大公约数为: &quot;);</div><div class="line">			System.out.println(CalcGCD.calcGCG(a, b));</div><div class="line">			System.out.println(a+&quot;和&quot;+b+&quot;的最小公倍数为: &quot;);</div><div class="line">			System.out.println(CalcLCM.calcLCM(a, b));</div><div class="line">		&#125;</div><div class="line">	&#125;</div></pre></td></tr></table></figure>
+<p>问题2：<strong>关于多重if语句的判断</strong></p>
+<p>原理图<br><img src="http://img.blog.csdn.net/20161202170243764" alt="这里写图片描述"></p>
+<p><strong>语法</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">if(条件1)&#123;</div><div class="line">	if(条件2)&#123;</div><div class="line">		代码块1;</div><div class="line">	&#125;else&#123;</div><div class="line">		代码块2;</div><div class="line">	&#125;</div><div class="line">&#125;else&#123;</div><div class="line">	代码块3;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p><strong>逻辑理解</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">如果外层if成立，则继续经过内层if</div><div class="line">如果内层if成立，经过继续往下层if</div><div class="line">一直成立，则顺序往下</div><div class="line">且不管else</div><div class="line"></div><div class="line">如果外层if不成立，则下面所有if不成立</div><div class="line">直接到第一个else</div></pre></td></tr></table></figure>
+<p><strong>代码</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div></pre></td><td class="code"><pre><div class="line">public class Study_20161202004 &#123;</div><div class="line">	public static void main(String[] args)&#123;</div><div class="line">		int num;</div><div class="line">		Scanner sc=new Scanner(System.in);</div><div class="line">		System.out.println(&quot;请输入一个数: &quot;);</div><div class="line">		num=sc.nextInt();</div><div class="line">		</div><div class="line">		if(num%3==0)&#123;</div><div class="line">			System.out.println(&quot;number id divisible by 3&quot;);</div><div class="line">			if(num%2==0)&#123;</div><div class="line">				System.out.println(&quot;number is divisible by 2&quot;);</div><div class="line">			&#125;</div><div class="line">		&#125;</div><div class="line">		else&#123;</div><div class="line">			if(num%5==0)&#123;</div><div class="line">				System.out.println(&quot;number is divisible by 5&quot;);</div><div class="line">			&#125;</div><div class="line">		&#125;</div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>输出结果</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">请输入一个数: </div><div class="line">60</div><div class="line">number id divisible by 3</div><div class="line">number is divisible by 2</div></pre></td></tr></table></figure>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;更新时间又太晚了，拖的时间太长了。下次注意，争取每天一更。&lt;br&gt;今天的主题是算法，以后一个月的时间都是关于算法的了。&lt;/p&gt;
+&lt;p&gt;问题1：&lt;strong&gt;求两个从键盘输入的数的最大公约数和最小公倍数&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt; &lt;strong&gt;顺序理解&lt;/stro
+    
+    </summary>
+    
+    
+  </entry>
   
   <entry>
     <title>Android成长日记————Java当中的递归问题</title>
