@@ -4,7 +4,7 @@
     <!-- hexo-inject:begin --><!-- hexo-inject:end --><!-- Title -->
     
     <title>
-        Android成长日记————Java当中的递归问题 | Mr Joker
+        Android Activity之间数据返回——下一个Activity返回到上一个Activity | Mr Joker
     </title>
     
     <!-- Favicons -->
@@ -40,7 +40,7 @@
     <!-- The Open Graph protocol -->
     <meta property="og:url" content="http://yoursite.com">
     <meta property="og:type" content="blog">
-    <meta property="og:title" content="Android成长日记————Java当中的递归问题 | Mr Joker">
+    <meta property="og:title" content="Android Activity之间数据返回——下一个Activity返回到上一个Activity | Mr Joker">
     <meta property="og:description" content="null">
     
      <!--[if lte IE 9]>
@@ -248,7 +248,7 @@
 		
 	
         <p class="article-headline-p">
-            Android成长日记————Java当中的递归问题
+            Android Activity之间数据返回——下一个Activity返回到上一个Activity
         </p>
     </div>
 
@@ -266,7 +266,7 @@
     <!-- Author Name & Date -->
     <div>
         <strong>WangXiaoChou</strong>
-        <span>12月 01, 2016</span>
+        <span>2月 11, 2017</span>
     </div>
     
     <div class="section-spacer"></div>
@@ -301,21 +301,21 @@
     
     
     <!-- Share Twitter -->
-    <a class="post_share-link" href="https://twitter.com/intent/tweet?text=Android成长日记————Java当中的递归问题&url=http://yoursite.com//2016/12/01/Android成长日记————Java当中的递归问题/index.html&via=WangXiaoChou" target="_blank">
+    <a class="post_share-link" href="https://twitter.com/intent/tweet?text=Android Activity之间数据返回——下一个Activity返回到上一个Activity&url=http://yoursite.com//2017/02/11/Android-Activity之间数据返回——下一个Activity返回到上一个Activity/index.html&via=WangXiaoChou" target="_blank">
         <li class="mdl-menu__item">
             分享到 Twitter
         </li>
     </a>
     
     <!-- Share Google+ -->
-    <a class="post_share-link" href="https://plus.google.com/share?url=http://yoursite.com//2016/12/01/Android成长日记————Java当中的递归问题/index.html" target="_blank">
+    <a class="post_share-link" href="https://plus.google.com/share?url=http://yoursite.com//2017/02/11/Android-Activity之间数据返回——下一个Activity返回到上一个Activity/index.html" target="_blank">
         <li class="mdl-menu__item">
             分享到 Google+
         </li>
     </a>
     
     <!-- Share Weibo -->
-    <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=Android成长日记————Java当中的递归问题&url=http://yoursite.com//2016/12/01/Android成长日记————Java当中的递归问题/index.html&pic=&searchPic=false&style=simple" target="_blank">
+    <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=Android Activity之间数据返回——下一个Activity返回到上一个Activity&url=http://yoursite.com//2017/02/11/Android-Activity之间数据返回——下一个Activity返回到上一个Activity/index.html&pic=&searchPic=false&style=simple" target="_blank">
         <li class="mdl-menu__item">
             分享到微博
         </li>
@@ -327,16 +327,29 @@
                 <!-- Post Content -->
                 <div id="post-content" class="markdown-Github mdl-color-text--grey-700 mdl-card__supporting-text fade out">
 	
-		<p>今天来讨论一下递归的问题，只是初步，后面陆续还会有更加深入的探讨<br>先来一个数学函数：</p>
-<blockquote>
-<p>$$f(x)=2f(x-1)+x^2$$<br>$$f(0)=0$$</p>
-</blockquote>
-<p>由这个函数我们可以推出这样的结果</p>
-<blockquote>
-<p>$$f(1)=1,f(2)=6,f(3)=21,f(4)=58$$</p>
-</blockquote>
-<p><strong>结论</strong>：当一个函数用它自己来定义的时候就称为是，<strong>递归的</strong>，注意这里我<strong>并没有</strong>说递归的概念，只是说这个数学函数是<strong>递归的</strong>。<br>好了，上代码</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line">import java.util.Scanner;</div><div class="line">public class Study_2016112100701 &#123;</div><div class="line">	public static void main(String arsg[])&#123;</div><div class="line">	</div><div class="line">		//输入</div><div class="line">		int n;</div><div class="line">		System.out.println(&quot;请输入一个数: &quot;);</div><div class="line">		@SuppressWarnings(&quot;resource&quot;)</div><div class="line">		Scanner sc=new Scanner(System.in);</div><div class="line">		n=sc.nextInt();</div><div class="line">		</div><div class="line">		//求和</div><div class="line">		int sum=0;                    //此时我们 声明并创建了一个初始的值，是sum自己为0</div><div class="line">		for(int i=0;i&lt;n;i++)</div><div class="line">			sum+=i;                   //所有的计算都必须围绕上一个sum才可以求出下一个sum</div><div class="line">		System.out.println(sum);               </div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+		<p>上篇提到了上一个Activity传递数据到下一个Activity。<br>这一篇就是下一个Activity数据返回到上一个Activity了。</p>
+<p><strong>逻辑流程图</strong></p>
+<p><img src="http://img.blog.csdn.net/20170211171637152?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvV0xfQW5kcm9pZF9IV0g=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt="这里写图片描述"></p>
+<p><strong>逻辑</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">1.新建一个Intent,只作传递数据使用，不做其他用途</div><div class="line">2.数据</div><div class="line">3.在intent中放入putExtra()方法，使数据可以返回</div><div class="line">4.setResult()方法必须使用到</div><div class="line">5.在启动下一个Activity时必须要用到的startActivityForResult()方法</div><div class="line">6.onActivityResult()方法</div><div class="line">7.getStringExtra()方法</div></pre></td></tr></table></figure>
+<p>直接来看代码，我在代码里面做了注解，相信你们可以看懂。</p>
+<p>FirstActivity.java</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">package wlhwh.example.com.datatransport_20170211;</div><div class="line"></div><div class="line">import android.content.Intent;</div><div class="line">import android.support.v7.app.AppCompatActivity;</div><div class="line">import android.os.Bundle;</div><div class="line">import android.util.Log;</div><div class="line">import android.view.View;</div><div class="line">import android.widget.Button;</div><div class="line"></div><div class="line">public class FirstActivity extends AppCompatActivity &#123;</div><div class="line"></div><div class="line">    private Button mButton;</div><div class="line"></div><div class="line">    @Override</div><div class="line">    protected void onCreate(Bundle savedInstanceState) &#123;</div><div class="line">        super.onCreate(savedInstanceState);</div><div class="line">        setContentView(R.layout.first_activity);</div><div class="line">        mButton = (Button)findViewById(R.id.button);</div><div class="line">        mButton.setOnClickListener(new View.OnClickListener() &#123;</div><div class="line">            @Override</div><div class="line">            public void onClick(View v) &#123;</div><div class="line">                Intent intent  = new Intent(FirstActivity.this,SecondActivity.class);</div><div class="line">                //这个方法来启动下一个Activity,请求码是唯一的值，所以我们这里传入1就可以了</div><div class="line">                startActivityForResult(intent,1);</div><div class="line">            &#125;</div><div class="line">        &#125;);</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    @Override</div><div class="line">    //调用onActivityResult()方法来回调数据</div><div class="line">    //onActivityResult()方法有三个参数，分别是requestCode,resultCode,data</div><div class="line">    //分别对应的是请求码，处理结果和数据</div><div class="line">    protected void onActivityResult(int requestCode, int resultCode, Intent data) &#123;</div><div class="line">        //这里是一个switch()方法，内置的变量是requestCode,即请求码</div><div class="line">        switch(requestCode)&#123;</div><div class="line">            //第一个case是1，即对应之前startActivityResult()方法当中的请求码</div><div class="line">            case 1:</div><div class="line">                //如果里面的处理结果是和后面一个Activity的setResult()方法当中的第一个参数相同</div><div class="line">                if (resultCode==2)&#123;</div><div class="line">                    //那么就从返回时获取返回的数据</div><div class="line">                    //这里使用getStringExtra(0方法获取数据，里面的参数对应下一个Activity中putExtra()方法中的第一个参数</div><div class="line">                    String returnData = data.getStringExtra(&quot;data&quot;);</div><div class="line">                    //通过日志和控制台将返回的数据打印出来</div><div class="line">                    Log.d(&quot;data&quot;,returnData);</div><div class="line">                &#125;</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>SecondActivity.java</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">package wlhwh.example.com.datatransport_20170211;</div><div class="line"></div><div class="line">import android.content.Intent;</div><div class="line">import android.os.Bundle;</div><div class="line">import android.support.v7.app.AppCompatActivity;</div><div class="line"></div><div class="line">/**</div><div class="line"> * Created by WLHWH on 2017/2/11.</div><div class="line"> */</div><div class="line"></div><div class="line">public class SecondActivity extends AppCompatActivity&#123;</div><div class="line"></div><div class="line">    @Override</div><div class="line">    protected void onCreate(Bundle savedInstanceState)&#123;</div><div class="line">        super.onCreate(savedInstanceState);</div><div class="line">        setContentView(R.layout.second_activity);</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    @Override</div><div class="line">    //调用onBackPressed()方法，点击返回键返回数据给上一个Activity</div><div class="line">    public void onBackPressed() &#123;</div><div class="line">        //还是新建一个Intent,只是此时Intent只是作为传递数据使用，并没有其他的意图</div><div class="line">        Intent intent = new Intent();</div><div class="line">        //需要返回的数据</div><div class="line">        String data = &quot;我是返回的数据&quot;;</div><div class="line">        //在intent当中调用putExtra()方法来把数据返回</div><div class="line">        intent.putExtra(&quot;data&quot;,data);</div><div class="line">        //setResult()方法是返回数据时必须要使用到的额，这里需要两个参数</div><div class="line">        //一个参数来和getStringExtra()方法当中的参数项对应</div><div class="line">        //后一个参数和当前Activity中的数据data对应</div><div class="line">        setResult(2,intent);</div><div class="line">        //返回数据后结束当前活动</div><div class="line">        finish();</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>结果图</p>
+<p><img src="http://img.blog.csdn.net/20170211172445674?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvV0xfQW5kcm9pZF9IV0g=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt="这里写图片描述"></p>
+<p><strong>进阶</strong></p>
+<p>FirstActivity.java</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">package wlhwh.example.com.datatransport_20170211;</div><div class="line"></div><div class="line">import android.content.Intent;</div><div class="line">import android.support.v7.app.AppCompatActivity;</div><div class="line">import android.os.Bundle;</div><div class="line">import android.view.View;</div><div class="line">import android.widget.Button;</div><div class="line">import android.widget.TextView;</div><div class="line"></div><div class="line">public class FirstActivity extends AppCompatActivity &#123;</div><div class="line"></div><div class="line">    private Button mButton;</div><div class="line">    private TextView mTextView;</div><div class="line"></div><div class="line">    @Override</div><div class="line">    protected void onCreate(Bundle savedInstanceState) &#123;</div><div class="line">        super.onCreate(savedInstanceState);</div><div class="line">        setContentView(R.layout.first_activity);</div><div class="line">        mTextView = (TextView)findViewById(R.id.tv_1);</div><div class="line">        mButton = (Button)findViewById(R.id.button);</div><div class="line">        mButton.setOnClickListener(new View.OnClickListener() &#123;</div><div class="line">            @Override</div><div class="line">            public void onClick(View v) &#123;</div><div class="line">                Intent intent  = new Intent(FirstActivity.this,SecondActivity.class);</div><div class="line">                //这个方法来启动下一个Activity,请求码是唯一的值，所以我们这里传入1就可以了</div><div class="line">                startActivityForResult(intent,1);</div><div class="line">            &#125;</div><div class="line">        &#125;);</div><div class="line">    &#125;</div><div class="line"></div><div class="line"></div><div class="line">    @Override</div><div class="line">    protected void onActivityResult(int requestCode, int resultCode, Intent data) &#123;</div><div class="line">        switch(requestCode)&#123;</div><div class="line">            case 1:</div><div class="line">                if (resultCode==2)&#123;</div><div class="line">                    ///获取数据</div><div class="line">                    String et_String = data.getStringExtra(&quot;data&quot;);</div><div class="line">                    //通过TextView显示</div><div class="line">                    mTextView.setText(&quot;我是得到的数据&quot;+et_String);</div><div class="line">                &#125;</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>SecondActivity.java</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">package wlhwh.example.com.datatransport_20170211;</div><div class="line"></div><div class="line">import android.content.Intent;</div><div class="line">import android.os.Bundle;</div><div class="line">import android.support.v7.app.AppCompatActivity;</div><div class="line">import android.widget.EditText;</div><div class="line"></div><div class="line">/**</div><div class="line"> * Created by WLHWH on 2017/2/11.</div><div class="line"> */</div><div class="line"></div><div class="line">public class SecondActivity extends AppCompatActivity&#123;</div><div class="line"></div><div class="line">    private EditText mEditText_1;</div><div class="line"></div><div class="line">    @Override</div><div class="line">    protected void onCreate(Bundle savedInstanceState)&#123;</div><div class="line">        super.onCreate(savedInstanceState);</div><div class="line">        setContentView(R.layout.second_activity);</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    @Override</div><div class="line">    //调用onBackPressed()方法，点击返回键返回数据给上一个Activity</div><div class="line">    public void onBackPressed() &#123;</div><div class="line">        //找到EditText的实例对象</div><div class="line">        mEditText_1 = (EditText)findViewById(R.id.et_1);</div><div class="line">        //写入数据，读取数据</div><div class="line">        String et_String = mEditText_1.getText().toString();</div><div class="line">        Intent intent = new Intent();</div><div class="line">        //通过putExtra()方法返回数据</div><div class="line">        intent.putExtra(&quot;data&quot;,et_String);</div><div class="line">        setResult(2,intent);</div><div class="line">        finish();</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>截图表示</p>
+<p><img src="http://img.blog.csdn.net/20170211224248464?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvV0xfQW5kcm9pZF9IV0g=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt="这里写图片描述"></p>
+<p><img src="http://img.blog.csdn.net/20170211224304980?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvV0xfQW5kcm9pZF9IV0g=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt="这里写图片描述"></p>
+<p>好了差不多就这样了。</p>
+<p>对了，这里还要说一下，上一篇博客里面关于上一个Activity传递数据到下一个Activity里面new bundle对象那里，是我弄复杂了，其实可以不同那样，直接把值可以传入putExtra()里面。</p>
+
 	
 	
 	
@@ -356,19 +369,19 @@
     
     <!-- Prev Nav -->
     
-        <a href="/2016/12/02/Android成长日记———不定期更新的小程序/" id="post_nav-newer" class="prev-content">
-            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
-                <i class="material-icons">arrow_back</i>
-            </button>
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            新篇
-        </a>
-    
 
     <!-- Section Spacer -->
     <div class="section-spacer"></div>
 
     <!-- Next Nav -->
+    
+        <a href="/2017/02/11/Android-Activity之间的数据传递/" id="post_nav-older" class="next-content">
+            旧篇
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
+                <i class="material-icons">arrow_forward</i>
+            </button>
+        </a>
     
 </nav>
         </div>
